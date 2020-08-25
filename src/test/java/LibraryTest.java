@@ -25,6 +25,17 @@ public class LibraryTest {
     }
 
     @Test
+    public void canTellIfLibraryHasRemainingCapacity() {
+        assertEquals(true, library.hasRemainingCapacity());
+    }
+
+    @Test
+    public void canTellIfLibraryDoesNotHaveRemainingCapacity() {
+        Library tinyLibrary = new Library(0);
+        assertEquals(false, tinyLibrary.hasRemainingCapacity());
+    }
+
+    @Test
     public void canAddBook() {
         library.addBook(book);
         assertEquals(1, library.getNumberOfBooks());
