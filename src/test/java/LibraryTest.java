@@ -48,4 +48,11 @@ public class LibraryTest {
         assertEquals(0, tinyLibrary.getNumberOfBooks());
     }
 
+    @Test
+    public void canRemoveBook() {
+        library.addBook(book);
+        library.removeBook(book);
+        assertEquals(0, library.getNumberOfBooks());
+    }
+
 }
