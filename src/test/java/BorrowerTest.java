@@ -17,4 +17,9 @@ public class BorrowerTest {
         assertEquals("Tomek", borrower.getName());
     }
 
+    @Test
+    public void collectionStartsEmpty() {
+        assertEquals(0, borrower.collectionSize());
+    }
+
 }
