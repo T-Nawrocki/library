@@ -23,7 +23,9 @@ public class Borrower {
     }
 
     public void borrow(Book book, Library library) {
-        library.removeBook(book);
-        addToCollection(book);
+        if (library.isBookInLibrary(book)) {
+            library.removeBook(book);
+            addToCollection(book);
+        }
     }
 }
