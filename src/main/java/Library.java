@@ -29,4 +29,8 @@ public class Library {
     public void removeBook(Book book) {
         books.remove(book);
     }
+
+    public boolean isBookInLibrary(Book book) {
+        return books.contains(book);
+    }
 }
