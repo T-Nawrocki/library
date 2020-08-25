@@ -17,4 +17,8 @@ public class Borrower {
     public int getCollectionSize() {
         return collection.size();
     }
+
+    public void borrow(Book book, Library library) {
+
+    }
 }

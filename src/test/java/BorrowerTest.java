@@ -28,6 +28,12 @@ public class BorrowerTest {
     }
 
     @Test
+    public void canAddBookToCollection() {
+        borrower.addToCollection(book);
+        assertEquals(1, borrower.getCollectionSize());
+    }
+
+    @Test
     public void canBorrowBook() {
         borrower.borrow(book, library);
         assertEquals(1, borrower.getCollectionSize());
