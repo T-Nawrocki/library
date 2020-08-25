@@ -40,4 +40,11 @@ public class BorrowerTest {
         assertEquals(0, library.getNumberOfBooks());
     }
 
+    @Test
+    public void cannotBorrowBookIfBookNotInLibrary() {
+        Library emptyLibrary = new Library(100);
+        borrower.borrow(book, emptyLibrary);
+        assertEquals(0, borrower.getCollectionSize());
+    }
+
 }
