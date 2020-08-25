@@ -1,16 +1,18 @@
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 public class LibraryTest {
 
     private Library library;
+    private Library tinyLibrary;
     private Book book;
 
     @Before
     public void before() {
         library = new Library(100);
+        tinyLibrary = new Library(0);
         book = new Book("The Shepherd's Crown", "Terry Pratchett", "fantasy");
     }
 
@@ -26,19 +28,24 @@ public class LibraryTest {
 
     @Test
     public void canTellIfLibraryHasRemainingCapacity() {
-        assertEquals(true, library.hasRemainingCapacity());
+        assertTrue(library.hasRemainingCapacity());
     }
 
     @Test
     public void canTellIfLibraryDoesNotHaveRemainingCapacity() {
-        Library tinyLibrary = new Library(0);
-        assertEquals(false, tinyLibrary.hasRemainingCapacity());
+        assertFalse(tinyLibrary.hasRemainingCapacity());
     }
 
     @Test
-    public void canAddBook() {
+    public void willAddBookIfThereIsCapacity() {
         library.addBook(book);
         assertEquals(1, library.getNumberOfBooks());
+    }
+
+    @Test
+    public void willNotAddBookIfThereIsNoRemainingCapacity() {
+        tinyLibrary.addBook(book);
+        assertEquals(0, tinyLibrary.getNumberOfBooks());
     }
 
 }
