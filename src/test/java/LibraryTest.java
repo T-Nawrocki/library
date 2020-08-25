@@ -10,13 +10,18 @@ public class LibraryTest {
 
     @Before
     public void before() {
-        library = new Library();
+        library = new Library(100);
         book = new Book("The Shepherd's Crown", "Terry Pratchett", "fantasy");
     }
 
     @Test
     public void hasBooks() {
         assertEquals(0, library.getNumberOfBooks());
+    }
+
+    @Test
+    public void hasCapacity() {
+        assertEquals(100, library.getCapacity());
     }
 
     @Test
