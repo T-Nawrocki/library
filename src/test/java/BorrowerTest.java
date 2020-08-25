@@ -19,7 +19,7 @@ public class BorrowerTest {
 
     @Test
     public void collectionStartsEmpty() {
-        assertEquals(0, borrower.collectionSize());
+        assertEquals(0, borrower.getCollectionSize());
     }
 
 }
