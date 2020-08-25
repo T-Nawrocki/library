@@ -21,4 +21,8 @@ public class Library {
     public void addBook(Book book) {
         books.add(book);
     }
+
+    public boolean hasRemainingCapacity() {
+        return getCapacity() > getNumberOfBooks();
+    }
 }
