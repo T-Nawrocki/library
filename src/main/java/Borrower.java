@@ -23,6 +23,7 @@ public class Borrower {
     }
 
     public void borrow(Book book, Library library) {
-
+        library.removeBook(book);
+        addToCollection(book);
     }
 }
