@@ -55,4 +55,15 @@ public class LibraryTest {
         assertEquals(0, library.getNumberOfBooks());
     }
 
+    @Test
+    public void canTellIfBookIsInLibrary() {
+        library.addBook(book);
+        assertTrue(library.isBookInLibrary(book));
+    }
+
+    @Test
+    public void canTellIfBookIsNotInLibrary() {
+        assertFalse(library.isBookInLibrary(book));
+    }
+
 }
