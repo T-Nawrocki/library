@@ -18,6 +18,10 @@ public class Borrower {
         return collection.size();
     }
 
+    public void addToCollection(Book book) {
+        collection.add(book);
+    }
+
     public void borrow(Book book, Library library) {
 
     }
